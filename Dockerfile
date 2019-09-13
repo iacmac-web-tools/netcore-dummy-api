@@ -17,4 +17,4 @@ ENV ASPNETCORE_ENVIRONMENT=Production
 ENV ASPNETCORE_URLS http://+:5000
 EXPOSE 5000
 EXPOSE 5001
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT ["dotnet", "dummy-api.dll"]
