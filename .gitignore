@@ -1,0 +1,5 @@
+bin
+obj
+obj/Debug/netcoreapp2.2
+obj/Debug/netcoreapp2.2/dummy-api.assets.cache
+obj/Debug/netcoreapp2.2/dummy-api.csproj.CoreCompileInputs.cache
