@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dummy_api.DataClasses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dummy_api.Controllers
@@ -42,6 +43,28 @@ namespace dummy_api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+          [HttpPost("check_test")]
+        public async Task<IActionResult> PostCheckUserAsync([FromBody] LoginResource model)
+        {
+            try
+            {
+                var res = await GetCustomer(model);
+                
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ErrorExceptionResource(ex));
+            }
+        }
+
+         private Task<string> GetCustomer(LoginResource model)
+        {
+            var str = $"Surrogate check:{model.Email}-{model.Password}";
+
+            return Task.FromResult<string>(str);
         }
     }
 }
