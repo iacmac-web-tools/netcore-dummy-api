@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace dummy_api.DataClasses
 {
     public class LoginResource
